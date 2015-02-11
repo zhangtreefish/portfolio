@@ -1,0 +1,163 @@
+var projects = {
+    "projects": [
+        {
+            "title": "Mockup to Website",
+            "dates": "Jan. 2015",
+            "description": "design a web page starting from a mockup, achieving 2.44% mismatch",
+            "image": "images/P1: Mockup to Website"
+        },
+        {
+            "title": "onetreefish.com",
+            "dates": "2014-present",
+            "description": "website promoting healthful living, learning, and my interpretation business",
+            "url": "onetreefish.com"
+        }
+    ]
+};
+
+var bio = {
+    "name": "Shuyu Zhang",
+    "role": "course developer and educator",
+    "contacts": {
+        "phone": "210-479-2565",
+        "email": "zhangtreefish@yahoo.com",
+        "gitHubUserName": "zhangtreefish",
+        "location": "San Antonio, TX",
+        "url": "www.onetreefish.com"
+    },
+    "welcomeMessage": "Welcome! Now get off the desk and do 10 jumping jacks!",
+    "skills": [
+        "front-end web development",
+        "design and implementation of science education",
+        "coaching of healthful living"
+    ]
+};
+
+var work = {
+    "jobs": [
+        {
+            "employer": "Our Lady of the Lake University",
+            "title": "adjunct lecturer of biology",
+            "location": "San Antonio",
+            "dates": "Jan. 2015 to present",
+            "description": "instruction of Introduction to Biology lab session"
+        },
+        {
+            "employer": "Hallmark University",
+            "title": "instructor of general education",
+            "location": "San Antonio",
+            "dates": "June 2011-October 2014",
+            "description": "Design and instruction of courses including Microbiology(theory and lab), Anatomy and Physiology (lab), Nutrition and Wellness (both on-ground and online versions), and character education course Dependability; establishing and maintaining the life science lab at Hallmark College."
+        },
+        {
+            "employer": "University of Texas Health Science Center at San Antonio",
+            "title": "postdoctoral fellow/research instructor",
+            "location": "San Antonio",
+            "dates": "Sept. 1998 to March 2006",
+            "description": "Investigation of general stress response of Bacillus subtilis; cancer and DNA repair"
+        }
+    ]
+};
+
+
+var education = {
+    "schools": [
+        {
+            "school": "Hallmark University",
+            "city": "SanAntonio",
+            "major": "GlobalManagement",
+            "degree": "MBA",
+            "graduate": "June2014",
+            "url": "http: //hallmarkuniversity.edu"
+        },
+        {
+            "school": "UniversityofTexasatAustin",
+            "city": "Austin",
+            "major": "Microbiology",
+            "degree": "Ph.D.",
+            "graduate": "August1998",
+            "url": "http: //www.utexas.edu"
+        },
+        {
+            "school": "TsinghuaUniversity",
+            "city": "Beijing",
+            "major": "B.S.inBiologicalSciencesandBiotechnology",
+            "degree": "B.S.",
+            "graduate": "July1991",
+            "url": "http: //www.tsinghua.edu.cn/publish/newthuen/index.html"
+        }
+    ],
+
+    "onlineCourses": [
+        {
+            "title": "front-endWebDesigneNanodegree",
+            "school": "Udacity",
+            "graduate": "May2015",
+            "url": "https: //www.udacity.com"
+        },
+        {
+            "title": "ComputerProgramming",
+            "school": "KahnAcademy",
+            "url": "https: //www.udacity.com"
+        }
+    ]
+};
+
+function displayBio (bio_obj){
+    $("#header").append(HTMLskillsStart);
+    var formattedName=HTMLheaderName.replace("%data%",bio_obj.name);
+    $("#header").append(formattedName);
+    var formattedRole=HTMLheaderRole.replace("%data%",bio_obj.role);
+    $("#header").append(formattedRole);
+    var formattedContact=HTMLcontactGeneric.replace("%data%",bio_obj.contacts.phone);
+    $("#header").append(formattedContact);
+    var formattedGithub=HTMLgithub.replace("%data%","https://github.com/"+bio_obj.contacts.gitHubUserName);
+    $("#header").append(formattedGithub);
+    var formattedEmail=HTMLemail.replace("%data%",bio_obj.contacts.email);
+    $("#header").append(formattedEmail);
+    var num=bio.skills.length;
+    if (num>0) {
+
+        for (var j=0; j<num; j++){
+            var formattedSkill=HTMLskills.replace("%data%",bio.skills[j]);
+            $("#skills").append(formattedSkill);
+                             }
+            }
+}
+displayBio(bio);
+function displayWork() {
+for (job in work.jobs) {
+    $("#workExperience").append(HTMLworkStart);
+    var formattedEmployer=HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
+    var formattedTitle=HTMLworkTitle.replace("%data%",work.jobs[job].title);
+    var formattedLocation=HTMLworkLocation.replace("%data%",work.jobs[job].location);
+    var formattedDates=HTMLworkDates.replace("%data%",work.jobs[job].dates);
+    var formattedDescription=HTMLworkDescription.replace("%data%",work.jobs[job].description);
+    $(".work-entry:last").append(formattedEmployer+formattedTitle+formattedLocation+formattedDates+formattedDescription)
+}
+}
+displayWork();
+
+$(document).click(function(loc) {
+    var x=loc.pageX;
+    var y=loc.pageY;
+    logClicks(x,y);// your code goes here
+});
+
+function locationizer(work_obj) {
+  var workLocations=[];
+    for (job in work.jobs) {
+        locationArray.push(work_obj.jobs[job].location);
+        }
+    return locationArray;
+};
+
+
+function inName(twoNames) {
+    var newName=twoNames.trim().split(" ");
+    var nameOne=newName[0].slice(0,1).toUpperCase()+newName[0].slice(1).toLowerCase();
+    var nameTwo=newName[1].toUpperCase();
+    return nameOne+" "+nameTwo;
+};
+
+$("#main").append(internationalizeButton);
