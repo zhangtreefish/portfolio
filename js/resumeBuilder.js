@@ -1,23 +1,3 @@
-var projects = {
-    "projects": [
-        {
-            "title": "Mockup to Website",
-            "dates": "Jan. 2015",
-            "description": "design a web page starting from a mockup, achieving 2.44% mismatch",
-            "image": "images/197X148.gif"
-        },
-        {
-            "title": "onetreefish.com",
-            "dates": "2014-present",
-            "description": "website promoting healthful living, learning, and my interpretation business",
-            "image": "images/197X148.gif"
-        }
-    ]
-
-};
-//projects.display();
-
-
 var bio = {
     "name": "Shuyu Zhang",
     "role": "course developer and educator",
@@ -59,6 +39,7 @@ var bio = {
         }
     };
     bio.displayBio();
+
 var work = {
     "jobs": [
         {
@@ -96,6 +77,37 @@ var work = {
         }
     };
     work.displayWork();
+
+var projects = {
+    "projects": [
+        {
+            "title": "Mockup to Website",
+            "dates": "Jan. 2015",
+            "description": "design a web page starting from a mockup, achieving 2.44% mismatch",
+            "image": "images/197X148.gif"
+        },
+        {
+            "title": "onetreefish.com",
+            "dates": "2014-present",
+            "description": "website promoting healthful living, learning, and my interpretation business",
+            "image": "images/197X148.gif"
+        }
+    ],
+    displayProjects: function() {
+    for (project in projects.projects) {
+        $("#projects").append(HTMLprojectStart);
+        var formattedTitle=HTMLprojectTitle.replace("%data%",projects.projects[project].title);
+        $(".project-entry:last").append(formattedTitle);
+        var formattedDates=HTMLprojectDates.replace("%data%",projects.projects[project].dates);
+        $(".project-entry:last").append(formattedDates);
+        var formattedDescription=HTMLprojectDescription.replace("%data%",projects.projects[project].description);
+        $(".project-entry:last").append(formattedDescription);
+        var formattedImage=HTMLprojectImage.replace("%data%",projects.projects[project].image);
+        $(".project-entry:last").append(formattedImage);
+       }
+    }
+    };
+    projects.displayProjects();
 
 var education = {
     "schools": [
