@@ -13,7 +13,10 @@ var projects = {
             "image": "images/197X148.gif"
         }
     ]
+
 };
+//projects.display();
+
 
 var bio = {
     "name": "Shuyu Zhang",
@@ -31,9 +34,31 @@ var bio = {
         "design and implementation of science education",
         "coaching of healthful living"
     ],
-    "biopic": "images/fry.jpg"
-};
-
+    "biopic": "images/fry.jpg",
+    displayBio: function() {
+        $("#header").append(HTMLskillsStart);
+        var formattedName=HTMLheaderName.replace("%data%",bio.name);
+        $("#header").append(formattedName);
+        var formattedRole=HTMLheaderRole.replace("%data%",bio.role);
+        $("#header").append(formattedRole);
+        var formattedContact=HTMLcontactGeneric.replace("%data%",bio.contacts.phone);
+        $("#header").append(formattedContact);
+        var formattedGithub=HTMLgithub.replace("%data%","https://github.com/"+bio.contacts.gitHubUserName);
+        $("#header").append(formattedGithub);
+        var formattedEmail=HTMLemail.replace("%data%",bio.contacts.email);
+        $("#header").append(formattedEmail);
+        var num=bio.skills.length;
+        if (num>0) {
+            for (var j=0; j<num; j++){
+                var formattedSkill=HTMLskills.replace("%data%",bio.skills[j]);
+                $("#skills").append(formattedSkill);
+                             }
+            }
+        var formattedPicture=HTMLbioPic.replace("%data%",bio.biopic);
+        $("#header").append(formattedPicture);
+        }
+    };
+    bio.displayBio();
 var work = {
     "jobs": [
         {
@@ -104,30 +129,7 @@ var education = {
     ]
 };
 
-function displayBio (bio_obj){
-    $("#header").append(HTMLskillsStart);
-    var formattedName=HTMLheaderName.replace("%data%",bio_obj.name);
-    $("#header").append(formattedName);
-    var formattedRole=HTMLheaderRole.replace("%data%",bio_obj.role);
-    $("#header").append(formattedRole);
-    var formattedContact=HTMLcontactGeneric.replace("%data%",bio_obj.contacts.phone);
-    $("#header").append(formattedContact);
-    var formattedGithub=HTMLgithub.replace("%data%","https://github.com/"+bio_obj.contacts.gitHubUserName);
-    $("#header").append(formattedGithub);
-    var formattedEmail=HTMLemail.replace("%data%",bio_obj.contacts.email);
-    $("#header").append(formattedEmail);
-    var num=bio.skills.length;
-    if (num>0) {
 
-        for (var j=0; j<num; j++){
-            var formattedSkill=HTMLskills.replace("%data%",bio.skills[j]);
-            $("#skills").append(formattedSkill);
-                             }
-            }
-    var formattedPicture=HTMLbioPic.replace("%data%",bio.biopic);
-    $("#header").append(formattedPicture);
-}
-displayBio(bio);
 function displayWork() {
 for (job in work.jobs) {
     $("#workExperience").append(HTMLworkStart);
