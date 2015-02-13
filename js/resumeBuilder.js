@@ -4,13 +4,13 @@ var projects = {
             "title": "Mockup to Website",
             "dates": "Jan. 2015",
             "description": "design a web page starting from a mockup, achieving 2.44% mismatch",
-            "image": "images/P1: Mockup to Website"
+            "image": "images/197X148.gif"
         },
         {
             "title": "onetreefish.com",
             "dates": "2014-present",
             "description": "website promoting healthful living, learning, and my interpretation business",
-            "url": "onetreefish.com"
+            "image": "images/197X148.gif"
         }
     ]
 };
@@ -21,16 +21,17 @@ var bio = {
     "contacts": {
         "phone": "210-479-2565",
         "email": "zhangtreefish@yahoo.com",
-        "gitHubUserName": "zhangtreefish",
-        "location": "San Antonio, TX",
-        "url": "www.onetreefish.com"
-    },
+        "gitHub": "https://github.com/zhangtreefish",
+        "twitter":"https://twitter.com/ZhangTreefish",
+        "location": "San Antonio, TX"
+        },
     "welcomeMessage": "Welcome! Now get off the desk and do 10 jumping jacks!",
     "skills": [
         "front-end web development",
         "design and implementation of science education",
         "coaching of healthful living"
-    ]
+    ],
+    "biopic": "images/fry.jpg"
 };
 
 var work = {
@@ -68,7 +69,7 @@ var education = {
             "major": "GlobalManagement",
             "degree": "MBA",
             "graduate": "June2014",
-            "url": "http: //hallmarkuniversity.edu"
+            "url": "http: //www.hallmarkuniversity.edu"
         },
         {
             "school": "UniversityofTexasatAustin",
@@ -123,6 +124,8 @@ function displayBio (bio_obj){
             $("#skills").append(formattedSkill);
                              }
             }
+    var formattedPicture=HTMLbioPic.replace("%data%",bio.biopic);
+    $("#header").append(formattedPicture);
 }
 displayBio(bio);
 function displayWork() {
@@ -161,3 +164,5 @@ function inName(twoNames) {
 };
 
 $("#main").append(internationalizeButton);
+
+
