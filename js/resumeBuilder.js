@@ -82,9 +82,20 @@ var work = {
             "dates": "Sept. 1998 to March 2006",
             "description": "Investigation of general stress response of Bacillus subtilis; cancer and DNA repair"
         }
-    ]
-};
-
+    ],
+    displayWork: function() {
+        for (job in work.jobs) {
+            $("#workExperience").append(HTMLworkStart);
+            var formattedEmployer=HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
+            var formattedTitle=HTMLworkTitle.replace("%data%",work.jobs[job].title);
+            var formattedLocation=HTMLworkLocation.replace("%data%",work.jobs[job].location);
+            var formattedDates=HTMLworkDates.replace("%data%",work.jobs[job].dates);
+            var formattedDescription=HTMLworkDescription.replace("%data%",work.jobs[job].description);
+            $(".work-entry:last").append(formattedEmployer+formattedTitle+formattedLocation+formattedDates+formattedDescription)
+            }
+        }
+    };
+    work.displayWork();
 
 var education = {
     "schools": [
@@ -130,18 +141,7 @@ var education = {
 };
 
 
-function displayWork() {
-for (job in work.jobs) {
-    $("#workExperience").append(HTMLworkStart);
-    var formattedEmployer=HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
-    var formattedTitle=HTMLworkTitle.replace("%data%",work.jobs[job].title);
-    var formattedLocation=HTMLworkLocation.replace("%data%",work.jobs[job].location);
-    var formattedDates=HTMLworkDates.replace("%data%",work.jobs[job].dates);
-    var formattedDescription=HTMLworkDescription.replace("%data%",work.jobs[job].description);
-    $(".work-entry:last").append(formattedEmployer+formattedTitle+formattedLocation+formattedDates+formattedDescription)
-}
-}
-displayWork();
+
 
 $(document).click(function(loc) {
     var x=loc.pageX;
