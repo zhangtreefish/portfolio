@@ -10,9 +10,9 @@ var bio = {
         },
     "welcomeMessage": "Welcome! Now get off the desk and do 10 jumping jacks!",
     "skills": [
-        "front-end web development",
-        "design and implementation of science education",
-        "coaching of healthful living"
+        "design and instruction of science courses",
+        "coaching of healthful living",
+        "front-end web development"
     ],
     "biopic": "images/fry.jpg",
     displayBio: function() {
@@ -35,9 +35,8 @@ var bio = {
             for (var j=0; j<num; j++){
                 var formattedSkill=HTMLskills.replace("%data%",bio.skills[j]);
                 $("#skills").append(formattedSkill);
-                             }
+                }
             }
-
         }
     };
     bio.displayBio();
@@ -86,7 +85,7 @@ var projects = {
             "title": "Mockup to Website",
             "dates": "Jan. 2015",
             "description": "design a web page starting from a mockup, achieving 2.44% mismatch",
-            "image": "images/197X148.gif"
+            "image": "http://maps.googleapis.com/maps/api/js?libraries=places"
         },
         {
             "title": "onetreefish.com",
