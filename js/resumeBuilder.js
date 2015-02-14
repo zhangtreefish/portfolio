@@ -16,17 +16,20 @@ var bio = {
     ],
     "biopic": "images/fry.jpg",
     displayBio: function() {
-        $("#header").append(HTMLskillsStart);
+
+        var formattedPicture=HTMLbioPic.replace("%data%",bio.biopic);
+        $("#header").append(formattedPicture);
         var formattedName=HTMLheaderName.replace("%data%",bio.name);
         $("#header").append(formattedName);
         var formattedRole=HTMLheaderRole.replace("%data%",bio.role);
         $("#header").append(formattedRole);
         var formattedContact=HTMLcontactGeneric.replace("%data%",bio.contacts.phone);
-        $("#header").append(formattedContact);
-        var formattedGithub=HTMLgithub.replace("%data%","https://github.com/"+bio.contacts.gitHubUserName);
-        $("#header").append(formattedGithub);
+        $("#topContacts").append(formattedContact);
+        var formattedGithub=HTMLgithub.replace("%data%",bio.contacts.gitHub);
+        $("#topContacts").append(formattedGithub);
         var formattedEmail=HTMLemail.replace("%data%",bio.contacts.email);
-        $("#header").append(formattedEmail);
+        $("#topContacts").append(formattedEmail);
+        $("#header").append(HTMLskillsStart);
         var num=bio.skills.length;
         if (num>0) {
             for (var j=0; j<num; j++){
@@ -34,8 +37,7 @@ var bio = {
                 $("#skills").append(formattedSkill);
                              }
             }
-        var formattedPicture=HTMLbioPic.replace("%data%",bio.biopic);
-        $("#header").append(formattedPicture);
+
         }
     };
     bio.displayBio();
@@ -178,5 +180,4 @@ function inName(twoNames) {
 };
 
 $("#main").append(internationalizeButton);
-
-
+$('#mapDiv').append(googleMap);
