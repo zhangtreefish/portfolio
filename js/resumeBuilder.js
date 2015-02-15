@@ -63,6 +63,13 @@ var work = {
             "location": "San Antonio, Texas",
             "dates": "Sept. 1998 to March 2006",
             "description": "Investigation of general stress response of Bacillus subtilis; cancer and DNA repair"
+        },
+        {
+            "employer": "East Harbor Co.",
+            "title": "staff",
+            "location": "Jinan, China",
+            "dates": "Aug. 1991 to Dec. 1991",
+            "description": "responsible for business operation"
         }
     ],
     displayWork: function() {
