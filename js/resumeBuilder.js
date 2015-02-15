@@ -6,7 +6,7 @@ var bio = {
         "email": "zhangtreefish@yahoo.com",
         "gitHub": "https://github.com/zhangtreefish",
         "twitter":"https://twitter.com/ZhangTreefish",
-        "location": "San Antonio, TX"
+        "location": "San Antonio"
         },
     "welcomeMessage": "Welcome! Now get off the desk and do 10 jumping jacks!",
     "skills": [
@@ -46,21 +46,21 @@ var work = {
         {
             "employer": "Our Lady of the Lake University",
             "title": "adjunct lecturer of biology",
-            "location": "San Antonio",
+            "location": "San Antonio, Texas",
             "dates": "Jan. 2015 to present",
             "description": "instruction of Introduction to Biology lab session"
         },
         {
             "employer": "Hallmark University",
             "title": "instructor of general education",
-            "location": "San Antonio",
+            "location": "San Antonio, Texas",
             "dates": "June 2011-October 2014",
             "description": "Design and instruction of courses including Microbiology(theory and lab), Anatomy and Physiology (lab), Nutrition and Wellness (both on-ground and online versions), and character education course Dependability; establishing and maintaining the life science lab at Hallmark College."
         },
         {
             "employer": "University of Texas Health Science Center at San Antonio",
             "title": "postdoctoral fellow/research instructor",
-            "location": "San Antonio",
+            "location": "San Antonio, Texas",
             "dates": "Sept. 1998 to March 2006",
             "description": "Investigation of general stress response of Bacillus subtilis; cancer and DNA repair"
         }
@@ -85,7 +85,7 @@ var projects = {
             "title": "Mockup to Website",
             "dates": "Jan. 2015",
             "description": "design a web page starting from a mockup, achieving 2.44% mismatch",
-            "image": "http://maps.googleapis.com/maps/api/js?libraries=places"
+            "image": "images/197X148.gif"
         },
         {
             "title": "onetreefish.com",
@@ -114,7 +114,7 @@ var education = {
     "schools": [
         {
             "school": "Hallmark University",
-            "city": "SanAntonio",
+            "location": "San Antonio, Texas",
             "major": "GlobalManagement",
             "degree": "MBA",
             "graduate": "June2014",
@@ -122,7 +122,7 @@ var education = {
         },
         {
             "school": "UniversityofTexasatAustin",
-            "city": "Austin",
+            "location": "Austin, Texas",
             "major": "Microbiology",
             "degree": "Ph.D.",
             "graduate": "August1998",
@@ -130,7 +130,7 @@ var education = {
         },
         {
             "school": "TsinghuaUniversity",
-            "city": "Beijing",
+            "location": "Beijing",
             "major": "B.S.inBiologicalSciencesandBiotechnology",
             "degree": "B.S.",
             "graduate": "July1991",
@@ -179,4 +179,4 @@ function inName(twoNames) {
 };
 
 $("#main").append(internationalizeButton);
-$('#mapDiv').append(googleMap);
+$("#mapDiv").append(googleMap);
