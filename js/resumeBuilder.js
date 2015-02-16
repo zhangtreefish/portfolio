@@ -5,7 +5,7 @@ var bio = {
         "phone": "210-479-2565",
         "email": "zhangtreefish@yahoo.com",
         "gitHub": "https://github.com/zhangtreefish",
-        "twitter":"https://twitter.com/ZhangTreefish",
+        "twitter":"@zhangtreefish",
         "location": "San Antonio"
         },
     "welcomeMessage": "Welcome! Now get off the desk and do 10 jumping jacks!",
@@ -19,10 +19,10 @@ var bio = {
 
         var formattedPicture=HTMLbioPic.replace("%data%",bio.biopic);
         $("#header").append(formattedPicture);
-        var formattedName=HTMLheaderName.replace("%data%",bio.name);
-        $("#header").append(formattedName);
         var formattedRole=HTMLheaderRole.replace("%data%",bio.role);
-        $("#header").append(formattedRole);
+        $("#header").prepend(formattedRole);
+        var formattedName=HTMLheaderName.replace("%data%",bio.name);
+        $("#header").prepend(formattedName);
         var formattedContact=HTMLcontactGeneric.replace("%data%",bio.contacts.phone);
         $("#topContacts").append(formattedContact);
         $("#footerContacts").append(formattedContact);
@@ -32,6 +32,10 @@ var bio = {
         var formattedEmail=HTMLemail.replace("%data%",bio.contacts.email);
         $("#topContacts").append(formattedEmail);
         $("#footerContacts").append(formattedEmail);
+        var formattedTwitter=HTMLtwitter.replace("%data%",bio.contacts.twitter);
+        $("#topContacts").append(formattedTwitter);
+        var formattedLocation=HTMLlocation.replace("%data%",bio.contacts.location);
+        $("#topContacts").append(formattedLocation);
         $("#header").append(HTMLskillsStart);
         var num=bio.skills.length;
         if (num>0) {
