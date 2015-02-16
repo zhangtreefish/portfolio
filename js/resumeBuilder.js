@@ -1,6 +1,6 @@
 var bio = {
-    "name": "Shuyu Zhang",
-    "role": "course developer and educator",
+    "name": "Shuyu (Susie) Zhang",
+    "role": "content developer and educator",
     "contacts": {
         "phone": "210-479-2565",
         "email": "zhangtreefish@yahoo.com",
@@ -14,7 +14,7 @@ var bio = {
         "coaching of healthful living",
         "front-end web development"
     ],
-    "biopic": "images/fry.jpg",
+    "biopic": "images/treefish.jpg",
     displayBio: function() {
 
         var formattedPicture=HTMLbioPic.replace("%data%",bio.biopic);
@@ -25,10 +25,13 @@ var bio = {
         $("#header").append(formattedRole);
         var formattedContact=HTMLcontactGeneric.replace("%data%",bio.contacts.phone);
         $("#topContacts").append(formattedContact);
+        $("#footerContacts").append(formattedContact);
         var formattedGithub=HTMLgithub.replace("%data%",bio.contacts.gitHub);
         $("#topContacts").append(formattedGithub);
+        $("#footerContacts").append(formattedGithub);
         var formattedEmail=HTMLemail.replace("%data%",bio.contacts.email);
         $("#topContacts").append(formattedEmail);
+        $("#footerContacts").append(formattedEmail);
         $("#header").append(HTMLskillsStart);
         var num=bio.skills.length;
         if (num>0) {
@@ -46,7 +49,7 @@ var work = {
         {
             "employer": "Our Lady of the Lake University",
             "title": "adjunct lecturer of biology",
-            "location": "San Antonio, Texas",
+            "location": "San Antonio",
             "dates": "Jan. 2015 to present",
             "description": "instruction of Introduction to Biology lab session"
         },
@@ -67,7 +70,7 @@ var work = {
         {
             "employer": "East Harbor Co.",
             "title": "staff",
-            "location": "Jinan, China",
+            "location": "Jinan",
             "dates": "Aug. 1991 to Dec. 1991",
             "description": "responsible for business operation"
         }
@@ -92,7 +95,7 @@ var projects = {
             "title": "Mockup to Website",
             "dates": "Jan. 2015",
             "description": "design a web page starting from a mockup, achieving 2.44% mismatch",
-            "image": "images/197X148.gif"
+            "image": "images/mockuptowebsite.png"
         },
         {
             "title": "onetreefish.com",
@@ -120,48 +123,78 @@ var projects = {
 var education = {
     "schools": [
         {
-            "school": "Hallmark University",
-            "location": "San Antonio, Texas",
-            "major": "GlobalManagement",
+            "name": "Hallmark University",
+            "location": "San Antonio",
+            "major": "Global Management",
             "degree": "MBA",
-            "graduate": "June2014",
+            "dates": "May 2013-June 2014",
             "url": "http: //www.hallmarkuniversity.edu"
         },
         {
-            "school": "UniversityofTexasatAustin",
-            "location": "Austin, Texas",
+            "name": "University of Texas at Austin",
+            "location": "Austin",
             "major": "Microbiology",
             "degree": "Ph.D.",
-            "graduate": "August1998",
+            "dates": "Januarary 1992-August 1998",
             "url": "http: //www.utexas.edu"
         },
         {
-            "school": "TsinghuaUniversity",
+            "name": "Tsinghua University",
             "location": "Beijing",
-            "major": "B.S.inBiologicalSciencesandBiotechnology",
+            "major": "B.S.in Biological Sciences and Biotechnology",
             "degree": "B.S.",
-            "graduate": "July1991",
+            "dates": "September 1986-July 1991",
             "url": "http: //www.tsinghua.edu.cn/publish/newthuen/index.html"
         }
     ],
 
-    "onlineCourses": [
+
+        "onlineCourses": [
         {
-            "title": "front-endWebDesigneNanodegree",
+            "title": "front-end Web Design Nanodegree",
             "school": "Udacity",
-            "graduate": "May2015",
+            "dates": "Januarary 2015-May 2015",
             "url": "https: //www.udacity.com"
         },
         {
-            "title": "ComputerProgramming",
-            "school": "KahnAcademy",
-            "url": "https: //www.udacity.com"
+            "title": "Computer Programming",
+            "school": "Kahn Academy",
+            "dates": "December 2014-present",
+            "url": "https://www.khanacademy.org"
         }
-    ]
-};
+    ],
+    displayEducation: function() {
+        for (school in education.schools) {
+            $("#education").append(HTMLschoolStart);
+            var formattedName=HTMLschoolName.replace("%data%",education.schools[school].name);
+            $(".education-entry:last").append(formattedName);
+            var formattedLocation=HTMLschoolLocation.replace("%data%",education.schools[school].location);
+            $(".education-entry:last").append(formattedLocation);
+            var formattedDates=HTMLschoolDates.replace("%data%",education.schools[school].dates);
+            $(".education-entry:last").append(formattedDates);
+            var formattedDegree=HTMLschoolDegree.replace("%data%",education.schools[school].degree);
+            $(".education-entry:last").append(formattedDegree);
+            var formattedMajor=HTMLschoolMajor.replace("%data%",education.schools[school].major);
+            $(".education-entry:last").append(formattedMajor);
+            }
+        },
 
-
-
+    displayOnlineCourses: function() {
+        $("#education").append(HTMLonlineClasses);
+        for (onlineCourse in education.onlineCourses) {
+            var formattedTitle=HTMLonlineTitle.replace("%data%",education.onlineCourses[onlineCourse].title);
+            $(".education-entry:last").append(formattedTitle);
+            var formattedSchool=HTMLonlineSchool.replace("%data%",education.onlineCourses[onlineCourse].school);
+            $(".education-entry:last").append(formattedSchool);
+            var formattedDates=HTMLonlineDates.replace("%data%",education.onlineCourses[onlineCourse].dates);
+            $(".education-entry:last").append(formattedDates);
+            var formattedURL=HTMLonlineURL.replace("%data%",education.onlineCourses[onlineCourse].url);
+            $(".education-entry:last").append(formattedURL);
+            }
+        }
+    }
+     education.displayEducation();
+     education.displayOnlineCourses();
 
 $(document).click(function(loc) {
     var x=loc.pageX;
