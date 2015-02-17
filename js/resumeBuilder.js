@@ -95,13 +95,7 @@ var work = {
 
 var projects = {
     "projects": [
-        {
-            "title": "Mockup to Website",
-            "dates": "Jan. 2015",
-            "description": "design a web page starting from a mockup, achieving 2.44% mismatch",
-            "image": "images/mockuptowebsite.png"
-        },
-        {
+                {
             "title": "onetreefish.com",
             "dates": "2014-present",
             "description": "website promoting healthful living, learning, and my interpretation business",
@@ -187,13 +181,13 @@ var education = {
         $("#education").append(HTMLonlineClasses);
         for (onlineCourse in education.onlineCourses) {
             var formattedTitle=HTMLonlineTitle.replace("%data%",education.onlineCourses[onlineCourse].title);
-            $(".education-entry:last").append(formattedTitle);
+            $("#online:last").append(formattedTitle);
             var formattedSchool=HTMLonlineSchool.replace("%data%",education.onlineCourses[onlineCourse].school);
-            $(".education-entry:last").append(formattedSchool);
+            $("#online:last").append(formattedSchool);
             var formattedDates=HTMLonlineDates.replace("%data%",education.onlineCourses[onlineCourse].dates);
-            $(".education-entry:last").append(formattedDates);
+            $("#online:last").append(formattedDates);
             var formattedURL=HTMLonlineURL.replace("%data%",education.onlineCourses[onlineCourse].url);
-            $(".education-entry:last").append(formattedURL);
+            $("#online:last").append(formattedURL);
             }
         }
     }
