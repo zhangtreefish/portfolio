@@ -1,13 +1,13 @@
 var bio = {
     "name": "Shuyu (Susie) Zhang",
-    "role": "content developer and educator",
+    "role": "course developer and educator",
     "contacts": {
         "phone": "210-479-2565",
         "email": "zhangtreefish@yahoo.com",
         "gitHub": "https://github.com/zhangtreefish",
         "twitter":"@zhangtreefish",
         "location": "San Antonio"
-        },
+    },
     "welcomeMessage": "Welcome! Now get off the desk and do 10 jumping jacks!",
     "skills": [
         "design and instruction of science courses",
@@ -42,11 +42,11 @@ var bio = {
             for (var j=0; j<num; j++){
                 var formattedSkill=HTMLskills.replace("%data%",bio.skills[j]);
                 $("#skills").append(formattedSkill);
-                }
             }
         }
-    };
-    bio.displayBio();
+    }
+};
+bio.displayBio();
 
 var work = {
     "jobs": [
@@ -88,14 +88,14 @@ var work = {
             var formattedDates=HTMLworkDates.replace("%data%",work.jobs[job].dates);
             var formattedDescription=HTMLworkDescription.replace("%data%",work.jobs[job].description);
             $(".work-entry:last").append(formattedEmployer+formattedTitle+formattedLocation+formattedDates+formattedDescription)
-            }
         }
-    };
-    work.displayWork();
+    }
+};
+work.displayWork();
 
 var projects = {
     "projects": [
-                {
+        {
             "title": "onetreefish.com",
             "dates": "2014-present",
             "description": "website promoting healthful living, learning, and my interpretation business",
@@ -103,20 +103,20 @@ var projects = {
         }
     ],
     displayProjects: function() {
-    for (project in projects.projects) {
-        $("#projects").append(HTMLprojectStart);
-        var formattedTitle=HTMLprojectTitle.replace("%data%",projects.projects[project].title);
-        $(".project-entry:last").append(formattedTitle);
-        var formattedDates=HTMLprojectDates.replace("%data%",projects.projects[project].dates);
-        $(".project-entry:last").append(formattedDates);
-        var formattedDescription=HTMLprojectDescription.replace("%data%",projects.projects[project].description);
-        $(".project-entry:last").append(formattedDescription);
-        var formattedImage=HTMLprojectImage.replace("%data%",projects.projects[project].image);
-        $(".project-entry:last").append(formattedImage);
-       }
+        for (project in projects.projects) {
+            $("#projects").append(HTMLprojectStart);
+            var formattedTitle=HTMLprojectTitle.replace("%data%",projects.projects[project].title);
+            $(".project-entry:last").append(formattedTitle);
+            var formattedDates=HTMLprojectDates.replace("%data%",projects.projects[project].dates);
+            $(".project-entry:last").append(formattedDates);
+            var formattedDescription=HTMLprojectDescription.replace("%data%",projects.projects[project].description);
+            $(".project-entry:last").append(formattedDescription);
+            var formattedImage=HTMLprojectImage.replace("%data%",projects.projects[project].image);
+            $(".project-entry:last").append(formattedImage);
+        }
     }
-    };
-    projects.displayProjects();
+};
+projects.displayProjects();
 
 var education = {
     "schools": [
@@ -145,9 +145,7 @@ var education = {
             "url": "http: //www.tsinghua.edu.cn/publish/newthuen/index.html"
         }
     ],
-
-
-        "onlineCourses": [
+    "onlineCourses": [
         {
             "title": "front-end Web Design Nanodegree",
             "school": "Udacity",
@@ -179,20 +177,20 @@ var education = {
 
     displayOnlineCourses: function() {
         $("#education").append(HTMLonlineClasses);
-        for (onlineCourse in education.onlineCourses) {
-            var formattedTitle=HTMLonlineTitle.replace("%data%",education.onlineCourses[onlineCourse].title);
-            $("#online:last").append(formattedTitle);
-            var formattedSchool=HTMLonlineSchool.replace("%data%",education.onlineCourses[onlineCourse].school);
-            $("#online:last").append(formattedSchool);
-            var formattedDates=HTMLonlineDates.replace("%data%",education.onlineCourses[onlineCourse].dates);
-            $("#online:last").append(formattedDates);
-            var formattedURL=HTMLonlineURL.replace("%data%",education.onlineCourses[onlineCourse].url);
-            $("#online:last").append(formattedURL);
+            for (onlineCourse in education.onlineCourses) {
+                var formattedTitle=HTMLonlineTitle.replace("%data%",education.onlineCourses[onlineCourse].title);
+                $("#online:last").append(formattedTitle);
+                var formattedSchool=HTMLonlineSchool.replace("%data%",education.onlineCourses[onlineCourse].school);
+                $("#online:last").append(formattedSchool);
+                var formattedDates=HTMLonlineDates.replace("%data%",education.onlineCourses[onlineCourse].dates);
+                $("#online:last").append(formattedDates);
+                var formattedURL=HTMLonlineURL.replace("%data%",education.onlineCourses[onlineCourse].url);
+                $("#online:last").append(formattedURL);
             }
         }
-    }
-     education.displayEducation();
-     education.displayOnlineCourses();
+    };
+education.displayEducation();
+education.displayOnlineCourses();
 
 $(document).click(function(loc) {
     var x=loc.pageX;
@@ -201,20 +199,19 @@ $(document).click(function(loc) {
 });
 
 function locationizer(work_obj) {
-  var workLocations=[];
+    var workLocations=[];
     for (job in work.jobs) {
         locationArray.push(work_obj.jobs[job].location);
-        }
+    }
     return locationArray;
-};
-
+}
 
 function inName(twoNames) {
     var newName=twoNames.trim().split(" ");
     var nameOne=newName[0].slice(0,1).toUpperCase()+newName[0].slice(1).toLowerCase();
     var nameTwo=newName[1].toUpperCase();
     return nameOne+" "+nameTwo;
-};
+}
 
 $("#main").append(internationalizeButton);
 $("#mapDiv").append(googleMap);
