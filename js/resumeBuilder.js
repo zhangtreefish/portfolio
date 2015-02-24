@@ -98,7 +98,7 @@ var projects = {
             "title": "onetreefish.com",
             "dates": "2014-present",
             "description": "website promoting healthful living, learning, and my interpretation business",
-            "image": "images/197X148.gif"
+            "image": "images/website.jpg"
         }
     ],
     displayProjects: function() {
