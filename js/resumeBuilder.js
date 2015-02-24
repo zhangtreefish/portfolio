@@ -16,7 +16,6 @@ var bio = {
     ],
     "biopic": "images/treefish.jpg",
     displayBio: function() {
-
         var formattedPicture=HTMLbioPic.replace("%data%",bio.biopic);
         $("#header").append(formattedPicture);
         var formattedRole=HTMLheaderRole.replace("%data%",bio.role);
