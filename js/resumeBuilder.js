@@ -98,13 +98,15 @@ var projects = {
             "title": "onetreefish.com",
             "dates": "2014-present",
             "description": "website promoting healthful living, learning, and my interpretation business",
-            "image": "images/website.jpg"
+            "image": "images/website.jpg",
+            "url": "http://www.onetreefish.com/"
         }
     ],
     displayProjects: function() {
         for (project in projects.projects) {
             $("#projects").append(HTMLprojectStart);
             var formattedTitle=HTMLprojectTitle.replace("%data%",projects.projects[project].title);
+            formattedTitle=formattedTitle.replace("#",projects.projects[project].url);
             $(".project-entry:last").append(formattedTitle);
             var formattedDates=HTMLprojectDates.replace("%data%",projects.projects[project].dates);
             $(".project-entry:last").append(formattedDates);
@@ -214,3 +216,5 @@ function inName(twoNames) {
 
 $("#main").append(internationalizeButton);
 $("#mapDiv").append(googleMap);
+//var formattedLink = $('<div> <a href="http://www.onetreefish.com/"> </a> Website </div>');
+//$(".project-entry:last").append(formattedLink);
