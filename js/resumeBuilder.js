@@ -218,3 +218,5 @@ $("#main").append(internationalizeButton);
 $("#mapDiv").append(googleMap);
 //var formattedLink = $('<div> <a href="http://www.onetreefish.com/"> </a> Website </div>');
 //$(".project-entry:last").append(formattedLink);
+$("#header").css("background-color","teal");
+$("#projects").css("background-color","#fc0");
