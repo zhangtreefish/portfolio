@@ -220,3 +220,10 @@ $("#mapDiv").append(googleMap);
 //$(".project-entry:last").append(formattedLink);
 $("#header").css("background-color","teal");
 $("#projects").css("background-color","#fc0");
+//var myHeading = document.querySelector('h2');
+//myHeading.innerHTML = 'Hello world!';
+//alert("May the peace be with you");
+document.querySelector('#header').onclick = function() {
+    alert('Have you stared at pea blossoms and wondered?');
+    $ ('#header').append('<img src="pea.jpg" width=800px>');
+}
