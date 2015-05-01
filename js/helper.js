@@ -24,7 +24,7 @@ var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span
 var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic">';
-var HTMLWelcomeMsg = '<span class="welcome-message">%data%</span>';
+var HTMLWelcomeMsg = '<span class="Welcome-message">%data%</span>';
 
 var HTMLskillsStart = '<h3 id="skillsH3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
 var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
@@ -146,11 +146,12 @@ function initializeMap() {
   placeData is the object returned from search results containing information
   about a single location.
   */
-  function createMapMarker(placeData) {
+
+function createMapMarker(placeData) {
 
     // The next lines save location data from the search result object to local variables
-    var lat = placeData.geometry.location.k;  // latitude from the place service
-    var lon = placeData.geometry.location.D;  // longitude from the place service
+    var lat = placeData.geometry.location.lat();  // latitude from the place service, it was D? before
+    var lon = placeData.geometry.location.lng();  // longitude from the place service, it was K? before
     var name = placeData.formatted_address;   // name of the place from the place service
     var bounds = window.mapBounds;            // current boundaries of the map window
 
@@ -160,6 +161,8 @@ function initializeMap() {
       position: placeData.geometry.location,
       title: name
     });
+
+
 
     // infoWindows are the little helper windows that open when you click
     // or hover over a pin on a map. They usually contain more information
