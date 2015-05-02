@@ -8,3 +8,17 @@ I may have remembered wrong. Is there a way to find out when I forked?
 I changed the helper.js in local directory; I wish to copy the change to gh-pages, so I entered
 git merge master origin/gh-pages
 and got a merge conflict.
+Instead of doing pulling and pushing, I decided to remove gh-pages from both local and remote and start anew.
+at project directory master branch git prompt:
+$git branch -D gh-pages //remove local
+$git branch -rd origin.ghpages //remove remote
+$git checkout --orphan gh-pages
+
+at gh-pages branch:
+$git status
+$git commit -m "initial commit"
+$git push -f origin gh-pages
+
+Result: The remote gitHub page then was updated.
+
+
