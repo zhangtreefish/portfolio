@@ -97,9 +97,23 @@ var projects = {
         {
             "title": "onetreefish.com",
             "dates": "2014-present",
-            "description": "website promoting healthful living, learning, and my interpretation business",
+            "description": "My personal website promoting healthful living, learning, and my interpretation business",
             "image": "images/website.jpg",
             "url": "http://www.onetreefish.com/"
+        },
+        {
+            "title": "portfolio mockup",
+            "dates": "2014-2015",
+            "description": "Turned a designer’s mockup into the semantic HTML and CSS that browsers render",
+            "image": "images/page-mock.png",
+            "url": "http://zhangtreefish.github.io/p1/"
+        },
+        {
+            "title": "a Frogger game with a immunology twist",
+            "dates": "2015-2015",
+            "description": "Implemented a Frogger game using Object-Oriented javaScript and HTML5 Canvas",
+            "image": "images/game-pic.png",
+            "url": "https://zhangtreefish.github.io/frontend-nanodegree-arcade-game/"
         }
     ],
     displayProjects: function() {
