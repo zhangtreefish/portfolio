@@ -14,7 +14,7 @@ var bio = {
         "coaching of healthful living",
         "front-end web development"
     ],
-    "biopic": "images/treefish.jpg",
+    "biopic": "images/treefish.png",
     displayBio: function() {
         var formattedPicture=HTMLbioPic.replace("%data%",bio.biopic);
         $("#header").append(formattedPicture);
