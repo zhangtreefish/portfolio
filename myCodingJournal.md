@@ -1,4 +1,4 @@
-4/30/2015: found the map not diaplayed. Ask the coach and pointed to the fact that the helper.js had been modified:
+4/30/2015: found the map not displayed. Ask the coach and pointed to the fact that the helper.js had been modified:
 -    var lat = placeData.geometry.location.k;  // latitude from the place service
 -    var lon = placeData.geometry.location.D;  // longitude from the place service
 +    var lat = placeData.geometry.location.lat();  // latitude from the place service
