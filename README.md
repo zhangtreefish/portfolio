@@ -8,9 +8,12 @@
 4. I made sure that all of my codes for adding elements to the resume were within functions, and that all the functions were encapsulated within the respective objects, as required by Object-Oriented Programming.
 
 5. To update gh-page: 
+
 * first go to gh-pages; (1)
-* I used git rebase master to fast-forward gh-pages to master;
-* then git push origin gh-pages to push. 
+
+* I used *git rebase master* to fast-forward gh-pages to master;
+
+* then *git push origin gh-pages* to push. 
 
 (1) While trying to git checkout gh-pages, get error message "error: The following untracked working tree files would be overwritten by checkout". Googled and found the following: http://stackoverflow.com/questions/17404316/the-following-untracked-working-tree-files-would-be-overwritten-by-merge-but-i
 
