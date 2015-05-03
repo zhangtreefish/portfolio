@@ -164,7 +164,7 @@ var education = {
         {
             "title": "front-end Web Design Nanodegree",
             "school": "Udacity",
-            "dates": "Januarary 2015-May 2015",
+            "dates": "Januarary 2015-June 2015",
             "url": "https: //www.udacity.com"
         },
         {
