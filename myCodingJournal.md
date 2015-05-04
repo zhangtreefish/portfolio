@@ -11,9 +11,10 @@ and got a merge conflict.
 
 Instead of doing pulling and pushing, I decided to remove gh-pages from both local and remote and start anew.
 at project directory master branch git prompt:
+
 $git branch -D gh-pages //remove local
 
-$git branch -rd origin.ghpages //remove remote
+$git branch -rd origin/gh-pages //remove remote
 
 $git checkout --orphan gh-pages
 
