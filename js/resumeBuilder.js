@@ -25,7 +25,7 @@ var bio = {
         var formattedContact=HTMLcontactGeneric.replace("%data%",bio.contacts.phone);
         $("#topContacts").append(formattedContact);
         $("#footerContacts").append(formattedContact);
-        var formattedGithub=HTMLgithub.replace("%data%",bio.contacts.gitHub);
+        var formattedGithub=HTMLgithub.replace(/%data%/g,bio.contacts.gitHub);
         $("#topContacts").append(formattedGithub);
         $("#footerContacts").append(formattedGithub);
         var formattedEmail=HTMLemail.replace("%data%",bio.contacts.email);
@@ -74,14 +74,14 @@ var work = {
             "employer": "University of Texas Health Science Center at San Antonio",
             "title": "postdoctoral fellow/research instructor",
             "location": "San Antonio, Texas",
-            "dates": "Sept. 1998 to March 2006",
+            "dates": "September 1998 to March 2006",
             "description": "Investigation of general stress response of Bacillus subtilis; cancer and DNA repair"
         },
         {
             "employer": "East Harbor Co.",
             "title": "staff",
             "location": "Jinan",
-            "dates": "Aug. 1991 to Dec. 1991",
+            "dates": "August 1991 to December 1991",
             "description": "responsible for business operation"
         }
     ],
@@ -244,7 +244,3 @@ $("#projects").css("background-color","#fc0");
 //var myHeading = document.querySelector('h2');
 //myHeading.innerHTML = 'Hello world!';
 //alert("May the peace be with you");
-document.querySelector('#header').onclick = function() {
-    alert('Have you stared at pea blossoms and wondered?');
-    $ ('#header').append('<img src="pea.jpg" width=800px>');
-}
