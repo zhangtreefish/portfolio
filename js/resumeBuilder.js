@@ -1,6 +1,6 @@
 var bio = {
     "name": "Shuyu (Susie) Zhang",
-    "role": "course developer and educator",
+    "role": "web developer, instructor, scientist",
     "contacts": {
         "phone": "210-479-2565",
         "email": "zhangtreefish@yahoo.com",
@@ -14,7 +14,7 @@ var bio = {
         "coaching of healthful living",
         "front-end web development"
     ],
-    "biopic": "images/treefish.png",
+    "biopic": "http://i.imgur.com/5r0DB0H.jpg",
     displayBio: function() {
         var formattedPicture=HTMLbioPic.replace("%data%",bio.biopic);
         $("#header").append(formattedPicture);
@@ -68,7 +68,7 @@ var work = {
             "title": "instructor of general education",
             "location": "San Antonio, Texas",
             "dates": "June 2011-October 2014",
-            "description": "Design and instruction of courses including Microbiology(theory and lab), Anatomy and Physiology (lab), Nutrition and Wellness (both on-ground and online versions), and character education course Dependability; establishing and maintaining the life science lab at Hallmark College."
+            "description": "Design and instruction of courses including Microbiology, Anatomy and Physiology, Nutrition and Wellness"
         },
         {
             "employer": "University of Texas Health Science Center at San Antonio",
@@ -143,12 +143,20 @@ projects.displayProjects();
 var education = {
     "schools": [
         {
+            "name": "Udacity",
+            "location": "Mountain View",
+            "major": "Full Stack and Front-End Web Development",
+            "degree": "Full Stack Nanodegree, Front-End Nanodegree",
+            "dates": "Janurary 2015-May 2016",
+            "url": "https://www.udacity.com"
+        },
+        {
             "name": "Hallmark University",
             "location": "San Antonio",
             "major": "Global Management",
             "degree": "MBA",
             "dates": "May 2013-June 2014",
-            "url": "http: //www.hallmarkuniversity.edu"
+            "url": "http://www.hallmarkuniversity.edu"
         },
         {
             "name": "University of Texas at Austin",
@@ -156,7 +164,7 @@ var education = {
             "major": "Microbiology",
             "degree": "Ph.D.",
             "dates": "Januarary 1992-August 1998",
-            "url": "http: //www.utexas.edu"
+            "url": "http://www.utexas.edu"
         },
         {
             "name": "Tsinghua University",
@@ -164,27 +172,14 @@ var education = {
             "major": "B.S.in Biological Sciences and Biotechnology",
             "degree": "B.S.",
             "dates": "September 1986-July 1991",
-            "url": "http: //www.tsinghua.edu.cn/publish/newthuen/index.html"
-        }
-    ],
-    "onlineCourses": [
-        {
-            "title": "front-end Web Design Nanodegree",
-            "school": "Udacity",
-            "dates": "Januarary 2015-June 2015",
-            "url": "https: //www.udacity.com"
-        },
-        {
-            "title": "Computer Programming",
-            "school": "Kahn Academy",
-            "dates": "December 2014-present",
-            "url": "https://www.khanacademy.org"
+            "url": "http://www.tsinghua.edu.cn/publish/newthuen/index.html"
         }
     ],
     displayEducation: function() {
         for (school in education.schools) {
             $("#education").append(HTMLschoolStart);
             var formattedName=HTMLschoolName.replace("%data%",education.schools[school].name);
+            formattedName=formattedName.replace("#", education.schools[school].url);
             $(".education-entry:last").append(formattedName);
             var formattedLocation=HTMLschoolLocation.replace("%data%",education.schools[school].location);
             $(".education-entry:last").append(formattedLocation);
@@ -195,24 +190,9 @@ var education = {
             var formattedMajor=HTMLschoolMajor.replace("%data%",education.schools[school].major);
             $(".education-entry:last").append(formattedMajor);
         }
-    },
-
-    displayOnlineCourses: function() {
-        $("#education").append(HTMLonlineClasses);
-        for (onlineCourse in education.onlineCourses) {
-            var formattedTitle=HTMLonlineTitle.replace("%data%",education.onlineCourses[onlineCourse].title);
-            $("#online:last").append(formattedTitle);
-            var formattedSchool=HTMLonlineSchool.replace("%data%",education.onlineCourses[onlineCourse].school);
-            $("#online:last").append(formattedSchool);
-            var formattedDates=HTMLonlineDates.replace("%data%",education.onlineCourses[onlineCourse].dates);
-            $("#online:last").append(formattedDates);
-            var formattedURL=HTMLonlineURL.replace("%data%",education.onlineCourses[onlineCourse].url);
-            $("#online:last").append(formattedURL);
-        }
     }
 };
 education.displayEducation();
-education.displayOnlineCourses();
 
 $(document).click(function(loc) {
     var x=loc.pageX;
