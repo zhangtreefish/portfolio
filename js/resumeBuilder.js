@@ -50,10 +50,17 @@ bio.displayBio();
 var work = {
     "jobs": [
         {
+            "employer": "AT&T",
+            "title": "Technical Intern",
+            "location": "Dallas",
+            "dates": "July 2015 - September 2015",
+            "description": "front-end web development using AngularJS"
+        },
+        {
             "employer": "Our Lady of the Lake University",
             "title": "adjunct lecturer of biology",
             "location": "San Antonio",
-            "dates": "Jan. 2015 to present",
+            "dates": "January 2015 - May 2015",
             "description": "instruction of Introduction to Biology lab session"
         },
         {
