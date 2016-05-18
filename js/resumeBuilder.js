@@ -31,7 +31,7 @@ var bio = {
         var formattedEmail=HTMLemail.replace("%data%",bio.contacts.email);
         $("#topContacts").append(formattedEmail);
         $("#footerContacts").append(formattedEmail);
-        var formattedTwitter=HTMLtwitter.replace("%data%",bio.contacts.twitter);
+        var formattedTwitter=HTMLtwitter.replace(/%data%/g,bio.contacts.twitter);
         $("#topContacts").append(formattedTwitter);
         var formattedLocation=HTMLlocation.replace("%data%",bio.contacts.location);
         $("#topContacts").append(formattedLocation);
@@ -102,25 +102,25 @@ work.displayWork();
 var projects = {
     "projects": [
         {
-            "title": "onetreefish.com",
-            "dates": "2014-present",
-            "description": "My personal website promoting healthful living, learning, and my interpretation business",
-            "image": "images/website.jpg",
-            "url": "http://www.onetreefish.com/"
+            "title": "San Antonio Retirement Homes",
+            "dates": "2014-2015",
+            "description": "A retirement home application with interactive map and search list with KnockoutJS",
+            "image": "http://i.imgur.com/ztDG76q.jpg",
+            "url": "http://zhangtreefish.github.io/Project-5-for-Front-End-Web-Developer-Nanodegree"
         },
         {
-            "title": "portfolio mockup",
-            "dates": "2014-2015",
-            "description": "Turned a designer’s mockup into the semantic HTML and CSS that browsers render",
-            "image": "images/page-mock.png",
-            "url": "http://zhangtreefish.github.io/p1/"
+            "title": "therapeutic foods",
+            "dates": "2016-2016",
+            "description": "A Flask web app hosted in Amazon Web Service using Apache HTTP Server and PostgreSQL on Ubuntu system",
+            "image": "http://i.imgur.com/dd4d0fr.png",
+            "url": "http://ec2-52-38-199-253.us-west-2.compute.amazonaws.com/"
         },
         {
             "title": "a Frogger game with a immunology twist",
             "dates": "2015-2015",
             "description": "Implemented a Frogger game using Object-Oriented javaScript and HTML5 Canvas",
-            "image": "images/game-pic.png",
-            "url": "https://zhangtreefish.github.io/frontend-nanodegree-arcade-game/"
+            "image": "http://i.imgur.com/TMw9w29.png",
+            "url": "https://zhangtreefish.github.io/Project-3-for-Front-End-Web-Developer-Nanodegree"
         }
     ],
     displayProjects: function() {
