@@ -5,7 +5,7 @@ var bio = {
         "phone": "210-479-2565",
         "email": "zhangtreefish@yahoo.com",
         "gitHub": "https://github.com/zhangtreefish",
-        "twitter":"@zhangtreefish",
+        "twitter":"zhangtreefish",
         "location": "San Antonio"
     },
     "welcomeMessage": "Welcome! Now get off the desk and do 10 jumping jacks!",
