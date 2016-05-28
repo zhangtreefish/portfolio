@@ -8,7 +8,7 @@
   overflow: auto;
 }
 
-.education-entry, .work-entry, .project-entry {
+.project-entry {
   padding-left: 5%;
   padding-right: 5%;
 }
@@ -57,13 +57,12 @@ h2, h3, h4, h5 {
   float: left;
 }
 
-.location-text {
+.tools-text {
   font-style: italic;
   font-size: 14px;
   color: #999999;
   line-height: 16px;
-  float: right;
-
+  float: left;
 }
 
 p {
