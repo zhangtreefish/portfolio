@@ -1,0 +1,31 @@
+{
+  "name": "portfolio_page",
+  "version": "1.0.0",
+  "description": "My portfolio page",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-uglify": "^1.5.3",
+    "gulp-util": "^3.0.7"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.12.10"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhangtreefish/portfolio.git"
+  },
+  "keywords": [
+    "projects"
+  ],
+  "author": "zhangs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhangtreefish/portfolio/issues"
+  },
+  "homepage": "https://github.com/zhangtreefish/portfolio#readme"
+}
